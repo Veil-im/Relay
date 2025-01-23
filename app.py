@@ -3,12 +3,18 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.websocket("/ws")
-async def websocket_endpoint(websocket: websockets.WebSocket):
+@app.websocket("/ping")
+async def websocket_endpoint(websocket: websockets.ClientConnection):
     await websocket.accept()
     while True:
-        data = await websocket.receive_text()
-        await websocket.send_text(f"Message text was: {data}")
+        data = await websocket.recv()
+        if type(data) == str:
+            if data.lower() == "ping":
+                await websocket.send("Pong")
+            else:
+                await websocket.send("Still pong")
+        else:
+            await websocket.send("Still pong")
 
 if __name__ == "__main__":
     import uvicorn
