@@ -41,12 +41,17 @@ INSTALLED_APPS = [
 ]
 
 # Application definition
-
 INSTALLED_APPS += [
     "rest_framework",
     "rest_framework.authtoken",
     "djoser",
     "corsheaders",
+]
+
+# Applications
+INSTALLED_APPS += [
+    "accounts",
+    "chats",
 ]
 
 MIDDLEWARE = [
@@ -80,7 +85,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "relay.wsgi.application"
-
+ASGI_APPLICATION = "relay.asgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
