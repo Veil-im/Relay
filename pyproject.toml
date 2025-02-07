@@ -1,7 +1,12 @@
 [project]
 name = "relay"
 version = "0.1.0"
-description = "Relay server for Veil protocol."
+description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "django-cors-headers>=4.7.0",
+    "django>=5.1.6",
+    "djangorestframework>=3.15.2",
+    "djoser>=2.3.1",
+]
