@@ -1,3 +1,6 @@
 from django.test import TestCase
 
-# Create your tests here.
+class ChatTest(TestCase):
+    def test_chat(self):
+        self.assertEqual(1, 1)
+

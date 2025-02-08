@@ -22,4 +22,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include("djoser.urls")),
     path("api/", include("djoser.urls.authtoken")),
+    path("api/chats/", include("chats.urls")),
+    path("api/rooms/", include("rooms.urls")),
 ]
