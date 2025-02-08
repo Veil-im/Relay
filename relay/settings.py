@@ -52,6 +52,7 @@ INSTALLED_APPS += [
 INSTALLED_APPS += [
     "accounts",
     "chats",
+    "rooms",
 ]
 
 MIDDLEWARE = [
@@ -145,6 +146,19 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "models.primarys.SnowflakePrimaryKey"
 # Auto inc is bad
 
+
+# Rest framework
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.TokenAuthentication",
+    ),
+}
+
+# Djoser
+
+DJOSER = {
+    "LOGIN_FIELD": "email",
+}
 
 # Channels Redis
 CHANNEL_LAYERS = {

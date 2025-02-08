@@ -14,6 +14,7 @@ from channels.routing import ProtocolTypeRouter
 from channels.auth import AuthMiddlewareStack
 from channels.routing import URLRouter
 from chats.ws_urls import websocket_urlpatterns
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "relay.settings")
 django.setup()
 
