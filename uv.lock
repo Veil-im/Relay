@@ -471,6 +471,7 @@ dependencies = [
     { name = "djoser" },
     { name = "psycopg2" },
     { name = "python-dotenv" },
+    { name = "resend" },
     { name = "snowflake-id" },
 ]
 
@@ -485,6 +486,7 @@ requires-dist = [
     { name = "djoser", specifier = ">=2.3.1" },
     { name = "psycopg2", specifier = ">=2.9.10" },
     { name = "python-dotenv", specifier = ">=1.0.1" },
+    { name = "resend", specifier = ">=2.6.0" },
     { name = "snowflake-id", specifier = ">=1.0.2" },
 ]
 
@@ -514,6 +516,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/42/f2/05f29bc3913aea15eb670be136045bf5c5bbf4b99ecb839da9b422bb2c85/requests-oauthlib-2.0.0.tar.gz", hash = "sha256:b3dffaebd884d8cd778494369603a9e7b58d29111bf6b41bdc2dcd87203af4e9", size = 55650 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/3b/5d/63d4ae3b9daea098d5d6f5da83984853c1bbacd5dc826764b249fe119d24/requests_oauthlib-2.0.0-py2.py3-none-any.whl", hash = "sha256:7dd8a5c40426b779b0868c404bdef9768deccf22749cde15852df527e6269b36", size = 24179 },
+]
+
+[[package]]
+name = "resend"
+version = "2.6.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "requests" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/46/ff/f4235a93533cb04199ab50ef250afa514ada55a4a4b86e32e0c763931926/resend-2.6.0.tar.gz", hash = "sha256:e714210b761febd02a067a1ee00106b6aeb79c0a6dda80b58588b089550f0184", size = 13120 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ca/67/c8b10fa620303affa2240e7f45221a3c103a2e7d4f96dd8b9da4ec6cc84a/resend-2.6.0-py2.py3-none-any.whl", hash = "sha256:53f21fdee6ef18b2c90319b79b38fee048b6d47336283c0a1818bebcaf93c401", size = 19635 },
 ]
 
 [[package]]

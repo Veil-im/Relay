@@ -8,4 +8,3 @@ class CreateChatView(APIView):
     def post(self, request):
         return Response({"message": "Chat created"})
 
-

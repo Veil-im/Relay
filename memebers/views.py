@@ -5,8 +5,6 @@ from rest_framework.permissions import IsAuthenticated
 class AddMemberView(APIView):
     permission_classes = [IsAuthenticated]
 
-
     def post(self, request):
         return Response({"message": "Member added"})
-
 
