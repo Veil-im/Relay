@@ -92,8 +92,12 @@ ASGI_APPLICATION = "relay.asgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "relay-sync",
+        "USER": "postgres",
+        "PASSWORD": "",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
@@ -137,7 +141,9 @@ STATIC_URL = "static/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+# DEFAULT_AUTO_FIELD = "models.primary.CUIDPrimaryKey" It does not support strings
+DEFAULT_AUTO_FIELD = "models.primarys.SnowflakePrimaryKey"
+# Auto inc is bad
 
 
 # Channels Redis
@@ -162,3 +168,39 @@ CORS_ALLOW_METHODS = (
     "PUT",
 )
 CORS_ALLOWED_ORIGINS = ["https://veil.im"] if CORS_ORIGIN_ALLOW_ALL else []
+
+# Logging
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "{levelname} {asctime} {module} {process:d} {thread:d} {message}",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "verbose",
+        },
+        "file": {
+            "class": "logging.FileHandler",
+            "filename": "relay.log",
+            "level": "INFO",
+            "formatter": "verbose",
+        },
+    },
+    "loggers": {
+        "": {  # Root logger
+            "handlers": ["console", "file"],
+            "level": "INFO",
+        },
+        "models": {  # Logger for your models
+            "handlers": ["console", "file"],
+            "level": "INFO",
+            "propagate": False,
+        },
+    },
+}
