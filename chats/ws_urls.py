@@ -1,12 +1,14 @@
 
-from django.urls import re_path, path
+from django.urls import path
 from . import consumers
 from channels.routing import URLRouter
 
+# All chats must be going through this url
 urlpatterns = [
-    re_path(r'chat/(?P<room_name>\w+)/$', consumers.ChatConsumer.as_asgi()),
+    path('chat/', consumers.ChatConsumer.as_asgi()),
 ]
 
+
 websocket_urlpatterns = URLRouter([
-    path('sync', urlpatterns)
+    path('sync/', urlpatterns)
 ])

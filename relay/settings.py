@@ -153,15 +153,24 @@ DEFAULT_AUTO_FIELD = "models.primarys.SnowflakePrimaryKey"
 # Rest framework
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework.authentication.SessionAuthentication",  # Server-side sessions
     ),
+
 }
+
+
+# Session engine
+SESSION_ENGINE = "django.contrib.sessions.backends.db"
 
 # Djoser
 
 DJOSER = {
     "LOGIN_FIELD": "email",
+    # We want session to be created on login
+    "CREATE_SESSION_ON_LOGIN": True,
 }
+
+
 
 # Channels Redis
 CHANNEL_LAYERS = {

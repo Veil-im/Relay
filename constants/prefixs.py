@@ -1,0 +1,2 @@
+VERSION = "v1"
+API_PREFIX = f"api/{VERSION}"
