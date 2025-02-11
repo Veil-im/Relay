@@ -1,5 +1,4 @@
 from django.db import models
-from djoser.serializers import UserSerializer
 from django.contrib.auth.models import AbstractUser
 from models.primarys import CUIDPrimaryKey
 

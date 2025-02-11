@@ -21,8 +21,6 @@ from constants.prefixs import API_PREFIX
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path(f"{API_PREFIX}/", include("djoser.urls")),
-    path(f"{API_PREFIX}/auth/", include("djoser.urls.authtoken")),
     path(f"{API_PREFIX}/chats/", include("chats.urls")),
     path(f"{API_PREFIX}/rooms/", include("rooms.urls")),
 ]

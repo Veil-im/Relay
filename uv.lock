@@ -217,15 +217,6 @@ wheels = [
 ]
 
 [[package]]
-name = "defusedxml"
-version = "0.7.1"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/0f/d5/c66da9b79e5bdb124974bfe172b4daf3c984ebd9c2a06e2b8a4dc7331c72/defusedxml-0.7.1.tar.gz", hash = "sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69", size = 75520 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/07/6c/aa3f2f849e01cb6a001cd8554a88d4c77c5c1a31c95bdf1cf9301e6d9ef4/defusedxml-0.7.1-py2.py3-none-any.whl", hash = "sha256:a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61", size = 25604 },
-]
-
-[[package]]
 name = "django"
 version = "5.1.6"
 source = { registry = "https://pypi.org/simple" }
@@ -253,6 +244,15 @@ wheels = [
 ]
 
 [[package]]
+name = "django-environ"
+version = "0.12.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d6/04/65d2521842c42f4716225f20d8443a50804920606aec018188bbee30a6b0/django_environ-0.12.0.tar.gz", hash = "sha256:227dc891453dd5bde769c3449cf4a74b6f2ee8f7ab2361c93a07068f4179041a", size = 56804 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/83/b3/0a3bec4ecbfee960f39b1842c2f91e4754251e0a6ed443db9fe3f666ba8f/django_environ-0.12.0-py2.py3-none-any.whl", hash = "sha256:92fb346a158abda07ffe6eb23135ce92843af06ecf8753f43adf9d2366dcc0ca", size = 19957 },
+]
+
+[[package]]
 name = "djangorestframework"
 version = "3.15.2"
 source = { registry = "https://pypi.org/simple" }
@@ -262,34 +262,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/2c/ce/31482eb688bdb4e271027076199e1aa8d02507e530b6d272ab8b4481557c/djangorestframework-3.15.2.tar.gz", hash = "sha256:36fe88cd2d6c6bec23dca9804bab2ba5517a8bb9d8f47ebc68981b56840107ad", size = 1067420 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/7c/b6/fa99d8f05eff3a9310286ae84c4059b08c301ae4ab33ae32e46e8ef76491/djangorestframework-3.15.2-py3-none-any.whl", hash = "sha256:2b8871b062ba1aefc2de01f773875441a961fefbf79f5eed1e32b2f096944b20", size = 1071235 },
-]
-
-[[package]]
-name = "djangorestframework-simplejwt"
-version = "5.4.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "django" },
-    { name = "djangorestframework" },
-    { name = "pyjwt" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/8d/5f/1c130e823f734ba776c3925ad8e7c28ca1a59feb22d039b3810d1f8c0b34/djangorestframework_simplejwt-5.4.0.tar.gz", hash = "sha256:cccecce1a0e1a4a240fae80da73e5fc23055bababb8b67de88fa47cd36822320", size = 96648 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/f0/41/d6f67d24f46c7d8ee6dcb85c9abb94bad23140210bfb8c454641d278dfd2/djangorestframework_simplejwt-5.4.0-py3-none-any.whl", hash = "sha256:7aec953db9ed4163430c16d086eecb0f028f814ce6bba62b06c25919261e9077", size = 102316 },
-]
-
-[[package]]
-name = "djoser"
-version = "2.3.1"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "django" },
-    { name = "djangorestframework-simplejwt" },
-    { name = "social-auth-app-django" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/01/4a/d5bb069b49199c9fd0dc33c25dd7a6c15152926c47d73a560b6fde3bd2fb/djoser-2.3.1.tar.gz", hash = "sha256:4e7e2716b5b961f1289b5e49b2216ba5c18eb2a3b4b597dd6430638716ff5107", size = 33806 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/ea/77/eae6f6ae6b71d578d08f7eee7c0965cff59a270cf024ecdcbb8048fc7a4b/djoser-2.3.1-py3-none-any.whl", hash = "sha256:386f337b9e05cb82354525fe2b6fec19fb1743e93e53b5b4b9dfaffccc38789f", size = 64215 },
 ]
 
 [[package]]
@@ -356,15 +328,6 @@ wheels = [
 ]
 
 [[package]]
-name = "oauthlib"
-version = "3.2.2"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/6d/fa/fbf4001037904031639e6bfbfc02badfc7e12f137a8afa254df6c4c8a670/oauthlib-3.2.2.tar.gz", hash = "sha256:9859c40929662bec5d64f34d01c99e093149682a3f38915dc0655d5a633dd918", size = 177352 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/7e/80/cab10959dc1faead58dc8384a781dfbf93cb4d33d50988f7a69f1b7c9bbe/oauthlib-3.2.2-py3-none-any.whl", hash = "sha256:8139f29aac13e25d502680e9e19963e83f16838d48a0d71c287fe40e7067fbca", size = 151688 },
-]
-
-[[package]]
 name = "psycopg2"
 version = "2.9.10"
 source = { registry = "https://pypi.org/simple" }
@@ -406,15 +369,6 @@ wheels = [
 ]
 
 [[package]]
-name = "pyjwt"
-version = "2.10.1"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz", hash = "sha256:3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953", size = 87785 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/61/ad/689f02752eeec26aed679477e80e632ef1b682313be70793d798c1d5fc8f/PyJWT-2.10.1-py3-none-any.whl", hash = "sha256:dcdd193e30abefd5debf142f9adfcdd2b58004e644f25406ffaebd50bd98dacb", size = 22997 },
-]
-
-[[package]]
 name = "pyopenssl"
 version = "25.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -425,27 +379,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/9f/26/e25b4a374b4639e0c235527bbe31c0524f26eda701d79456a7e1877f4cc5/pyopenssl-25.0.0.tar.gz", hash = "sha256:cd2cef799efa3936bb08e8ccb9433a575722b9dd986023f1cabc4ae64e9dac16", size = 179573 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ca/d7/eb76863d2060dcbe7c7e6cccfd95ac02ea0b9acc37745a0d99ff6457aefb/pyOpenSSL-25.0.0-py3-none-any.whl", hash = "sha256:424c247065e46e76a37411b9ab1782541c23bb658bf003772c3405fbaa128e90", size = 56453 },
-]
-
-[[package]]
-name = "python-dotenv"
-version = "1.0.1"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/bc/57/e84d88dfe0aec03b7a2d4327012c1627ab5f03652216c63d49846d7a6c58/python-dotenv-1.0.1.tar.gz", hash = "sha256:e324ee90a023d808f1959c46bcbc04446a10ced277783dc6ee09987c37ec10ca", size = 39115 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/6a/3e/b68c118422ec867fa7ab88444e1274aa40681c606d59ac27de5a5588f082/python_dotenv-1.0.1-py3-none-any.whl", hash = "sha256:f7b63ef50f1b690dddf550d03497b66d609393b40b564ed0d674909a68ebf16a", size = 19863 },
-]
-
-[[package]]
-name = "python3-openid"
-version = "3.2.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "defusedxml" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/5f/4a/29feb8da6c44f77007dcd29518fea73a3d5653ee02a587ae1f17f1f5ddb5/python3-openid-3.2.0.tar.gz", hash = "sha256:33fbf6928f401e0b790151ed2b5290b02545e8775f982485205a066f874aaeaf", size = 305600 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/e0/a5/c6ba13860bdf5525f1ab01e01cc667578d6f1efc8a1dba355700fb04c29b/python3_openid-3.2.0-py3-none-any.whl", hash = "sha256:6626f771e0417486701e0b4daff762e7212e820ca5b29fcc0d05f6f8736dfa6b", size = 133681 },
 ]
 
 [[package]]
@@ -467,10 +400,9 @@ dependencies = [
     { name = "cuid2" },
     { name = "django" },
     { name = "django-cors-headers" },
+    { name = "django-environ" },
     { name = "djangorestframework" },
-    { name = "djoser" },
     { name = "psycopg2" },
-    { name = "python-dotenv" },
     { name = "resend" },
     { name = "snowflake-id" },
 ]
@@ -482,10 +414,9 @@ requires-dist = [
     { name = "cuid2", specifier = ">=2.0.1" },
     { name = "django", specifier = ">=5.1.6" },
     { name = "django-cors-headers", specifier = ">=4.7.0" },
+    { name = "django-environ", specifier = ">=0.12.0" },
     { name = "djangorestframework", specifier = ">=3.15.2" },
-    { name = "djoser", specifier = ">=2.3.1" },
     { name = "psycopg2", specifier = ">=2.9.10" },
-    { name = "python-dotenv", specifier = ">=1.0.1" },
     { name = "resend", specifier = ">=2.6.0" },
     { name = "snowflake-id", specifier = ">=1.0.2" },
 ]
@@ -503,19 +434,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz", hash = "sha256:55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760", size = 131218 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/f9/9b/335f9764261e915ed497fcdeb11df5dfd6f7bf257d4a6a2a686d80da4d54/requests-2.32.3-py3-none-any.whl", hash = "sha256:70761cfe03c773ceb22aa2f671b4757976145175cdfca038c02654d061d6dcc6", size = 64928 },
-]
-
-[[package]]
-name = "requests-oauthlib"
-version = "2.0.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "oauthlib" },
-    { name = "requests" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/42/f2/05f29bc3913aea15eb670be136045bf5c5bbf4b99ecb839da9b422bb2c85/requests-oauthlib-2.0.0.tar.gz", hash = "sha256:b3dffaebd884d8cd778494369603a9e7b58d29111bf6b41bdc2dcd87203af4e9", size = 55650 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/3b/5d/63d4ae3b9daea098d5d6f5da83984853c1bbacd5dc826764b249fe119d24/requests_oauthlib-2.0.0-py2.py3-none-any.whl", hash = "sha256:7dd8a5c40426b779b0868c404bdef9768deccf22749cde15852df527e6269b36", size = 24179 },
 ]
 
 [[package]]
@@ -562,37 +480,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/7a/d0/91bd3d2e54ea849e8c4e73681ef75c1c93f37a8c9f0627b1553522267e08/snowflake_id-1.0.2.tar.gz", hash = "sha256:4a4cd49508599aaa16488311f4b9121e9ac3bac57edff3e9f71b1d79086dbfe8", size = 4497 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/41/a4/ee0bdba1d1e98db21166381559d0061d752bbf66af2dd1cbbe4c2afdc4fa/snowflake_id-1.0.2-py3-none-any.whl", hash = "sha256:c3142752ed334b9d4632739a704461d13e97aa6fa71b65d5329829b4b5cc058c", size = 4795 },
-]
-
-[[package]]
-name = "social-auth-app-django"
-version = "5.4.2"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "django" },
-    { name = "social-auth-core" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/f5/03/2f393514c1e2ca3d4d6d67da796d3ff0e68715da37d1e948f0011f0e22b6/social-auth-app-django-5.4.2.tar.gz", hash = "sha256:c8832c6cf13da6ad76f5613bcda2647d89ae7cfbc5217fadd13477a3406feaa8", size = 25431 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/d7/29/24c8171ef84d36cc01ead404a19b99468a68244a9fba681ac7e9d261fe55/social_auth_app_django-5.4.2-py3-none-any.whl", hash = "sha256:0c041a31707921aef9a930f143183c65d8c7b364381364a50f3f7c6fcc9d62f6", size = 27433 },
-]
-
-[[package]]
-name = "social-auth-core"
-version = "4.5.4"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "cryptography" },
-    { name = "defusedxml" },
-    { name = "oauthlib" },
-    { name = "pyjwt" },
-    { name = "python3-openid" },
-    { name = "requests" },
-    { name = "requests-oauthlib" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/48/5d/86625c6673024d600b629d4e9db80ca5155bc200af5233d88ae45b8d2e06/social-auth-core-4.5.4.tar.gz", hash = "sha256:d3dbeb0999ffd0e68aa4bd73f2ac698a18133fd11b3fc890e1366f18c8889fac", size = 216496 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/85/9e/c4b21c66ff73bcbd605ba06b7c48260559ec50b5a4216ce2736053fe1bc1/social_auth_core-4.5.4-py3-none-any.whl", hash = "sha256:33cf970a623c442376f9d4a86fb187579e4438649daa5b5be993d05e74d7b2db", size = 410216 },
 ]
 
 [[package]]
