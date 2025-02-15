@@ -17,11 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from constants.prefixs import API_PREFIX
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", include("djoser.urls")),
-    path("api/", include("djoser.urls.authtoken")),
-    path("api/chats/", include("chats.urls")),
-    path("api/rooms/", include("rooms.urls")),
+    path(f"{API_PREFIX}/chats/", include("chats.urls")),
+    path(f"{API_PREFIX}/rooms/", include("rooms.urls")),
 ]

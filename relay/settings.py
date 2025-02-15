@@ -11,9 +11,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import os
-from dotenv import load_dotenv
-load_dotenv()
+import environ
+
+env = environ.Env(DEBUG=(bool, False))  # Set default values
+
+# Load .env file if exists
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -46,7 +49,6 @@ INSTALLED_APPS = [
 INSTALLED_APPS += [
     "rest_framework",
     "rest_framework.authtoken",
-    "djoser",
     "corsheaders",
 ]
 
@@ -96,11 +98,11 @@ ASGI_APPLICATION = "relay.asgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("DATABASE_NAME"),
-        "USER": os.environ.get("DATABASE_USER"),
-        "PASSWORD": os.environ.get("DATABASE_PASSWORD"),
-        "HOST": os.environ.get("DATABASE_HOST"),
-        "PORT": os.environ.get("DATABASE_PORT"),
+        "NAME": env("DATABASE_NAME", default="relay"),
+        "USER": env("DATABASE_USER", default="postgres"),
+        "PASSWORD": env("DATABASE_PASSWORD", default=""),
+        "HOST": env("DATABASE_HOST", default="localhost"),
+        "PORT": env("DATABASE_PORT", default="5432"),
 
     }
 }
@@ -153,29 +155,28 @@ DEFAULT_AUTO_FIELD = "models.primarys.SnowflakePrimaryKey"
 # Rest framework
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework.authentication.SessionAuthentication",  # Server-side sessions
     ),
+
 }
 
-# Djoser
 
-DJOSER = {
-    "LOGIN_FIELD": "email",
-}
+# Session engine
+SESSION_ENGINE = "django.contrib.sessions.backends.db"
 
 # Channels Redis
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [(os.environ.get("REDIS_URL"))],
+            "hosts": [(env("REDIS_URL", default="redis://localhost:6379"))],
         },
     },
 }
 
 # Cors
 # for debugging
-CORS_ORIGIN_ALLOW_ALL = os.getenv("CORS_ORIGIN_ALLOW_ALL") == "True"
+CORS_ORIGIN_ALLOW_ALL = env("CORS_ORIGIN_ALLOW_ALL", default="False") == "True"
 CORS_ALLOW_METHODS = (
     "DELETE",
     "GET",
